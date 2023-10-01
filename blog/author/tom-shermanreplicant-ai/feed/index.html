@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Tom Sherman, Author at Replicant</title>
+	<atom:link href="https://www.replicant.com/blog/author/tom-shermanreplicant-ai/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.replicant.com/blog/author/tom-shermanreplicant-ai/</link>
+	<description></description>
+	<lastBuildDate>Tue, 01 Aug 2023 15:47:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.3.1</generator>
+
+<image>
+	<url>https://www.replicant.com/wp-content/uploads/2022/10/cropped-Symbol_SVG-1-32x32.png</url>
+	<title>Tom Sherman, Author at Replicant</title>
+	<link>https://www.replicant.com/blog/author/tom-shermanreplicant-ai/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Replicant Labs: What Can Go Wrong in the Lifecycle of an Interaction?</title>
+		<link>https://www.replicant.com/blog/replicant-labs-what-can-go-wrong-in-the-life-of-an-interaction/</link>
+		
+		<dc:creator><![CDATA[Tom Sherman]]></dc:creator>
+		<pubDate>Tue, 01 Aug 2023 14:31:15 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://www.replicant.com/?p=6190</guid>
+
+					<description><![CDATA[<p>The Replicant Labs series pulls back the curtain on the tech, tools, and people behind...</p>
+<p>The post <a rel="nofollow" href="https://www.replicant.com/blog/replicant-labs-what-can-go-wrong-in-the-life-of-an-interaction/">Replicant Labs: What Can Go Wrong in the Lifecycle of an Interaction?</a> appeared first on <a rel="nofollow" href="https://www.replicant.com">Replicant</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p><i>The Replicant Labs series pulls back the curtain on the tech, tools, and people behind the Thinking Machine. From double-clicks into the latest technical breakthroughs like Large Language Models to first-hand stories from our subject matter experts, Replicant Labs provides a deeper look into the work and people that make our customers better every day. </i></p>
+<p><b>Tom Sherman, Manager, Engineering</b></p>
+<p><span style="font-weight: 400;">Humans are really good at having conversations. In the first few years of our lives, we learn all the tricks and nuances, and the result is a natural, intuitive, fluid process for exchanging information. We don’t think about “how” to have a conversation. </span></p>
+<p><span style="font-weight: 400;">For a Thinking Machine to have a fluid conversation with a person, we need to understand and mimic the conversational capabilities of a human being. We break down the seemingly simple process of conversation into all of its tiny, constituent parts. </span></p>
+<p><span style="font-weight: 400;">At each step of the way, little things can go wrong that ruin the fluidity of the conversation.</span></p>
+<h2>What does a single interaction’s lifecycle look like?</h2>
+<p><span style="font-weight: 400;">Let’s assume that a Thinking Machine answers the phone and asks the caller how it can help. </span></p>
+<ul>
+<li><span style="font-weight: 400;">The caller says: “I moved and I haven’t been getting my bill.”  </span></li>
+<li><span style="font-weight: 400;">And the Thinking Machine responds: “Okay, I can help you with that.” </span></li>
+</ul>
+<p><span style="font-weight: 400;">Let’s walk through the steps that are necessary to resolve this seemingly simple back-and-forth and prevent it from going off the rails:</span></p>
+<p><b>“Hearing” the Caller’s Voice. </b><span style="font-weight: 400;">First, we have to “hear” the audio. (For now, we’ll gloss over how telephone calls are made over the internet and how a Thinking Machine actually answers the phone.) </span><span style="font-weight: 400;">We receive the audio packets streamed to us from the telephony provider and in turn stream those to speech-to-text software, also called an automatic speech recognition (ASR) system. </span></p>
+<p><span style="font-weight: 400;">The ASR streams back transcripts of the text uttered, including partial and incomplete transcripts. Given more time and more words, we can be more confident of what was said.</span></p>
+<p><span style="font-weight: 400;">We also need to know when the user is done speaking. Humans make this decision easily and unconsciously, keying in on pauses, tone, facial expressions, and body language. </span></p>
+<p><span style="font-weight: 400;">On the phone, using software, we can go by the words that have been uttered and silence in the audio. We can decide that an utterance is complete by using dedicated software, or we can cede this decision to the ASR system.</span></p>
+<p><b>What happens if we make a bad decision? </b><span style="font-weight: 400;">A machine might cut a caller off if it moves too fast, not hearing everything that was said or interrupting their speech. But if we wait too long, the conversation feels stilted and strange, akin to a newscaster interviewing a foreign correspondent via satellite.</span></p>
+<p><span style="font-weight: 400;">Let’s assume we get it right and properly judge when the human is done speaking. We have a transcript of the utterance from the ASR. But is it correct? What if the caller has the TV on in the background or is talking to their spouse during the call? Did we even transcribe the right voice?</span></p>
+<p><span style="font-weight: 400;">What if we mishear the caller? We might be very confident that the caller said “I moved and I haven’t been getting my bill,” or we might not be so sure. When do we decide to re-prompt the caller by asking for them to repeat what they said? Everyone’s had the experience of automated phone systems asking for a repeat, and it quickly gets annoying!</span></p>
+<p><b>Understanding the Caller’s Words. </b><span style="font-weight: 400;">This time, the transcript is correct. The caller indeed said “I moved and I haven’t been getting my bill.” What does that text mean, in this context? Can the Thinking Machine help in this situation? </span></p>
+<p><span style="font-weight: 400;">For that, we need to detect the intent of the utterance. To make this inference, we invoke a machine learning model that takes in arbitrary text (“I moved and I haven’t been getting my bill”) and returns a set of probabilities, each associated with a task or subject area. </span></p>
+<p><span style="font-weight: 400;">For example, the model might respond that with a confidence of 79%, this utterance relates to the topic of mailing addresses. </span><span style="font-weight: 400;">79% sounds pretty confident, but what about 70%? 60%? 45%? When do we ask the caller to repeat, clarify, or rephrase? </span></p>
+<p><span style="font-weight: 400;">What if there are two relatively high probability options: do we ask the caller to disambiguate, i.e., choose between the options? This is the art and science of conversation design for humans speaking to machines.</span></p>
+<p><b>Speaking back to the Caller. </b><span style="font-weight: 400;">The caller does seem to be inquiring about their mailing address, and the Thinking Machine is capable of helping with that task. So it needs to “say” as much to the caller, but typical software programs can’t speak. So we use a text-to-speech (TTS) system to synthesize the text. </span></p>
+<p><span style="font-weight: 400;">T</span><span style="font-weight: 400;">TS systems take in a string of text (“Okay, I can help you with that.”) and return an audio file or stream of data. But j</span><span style="font-weight: 400;">ust having the audio is not enough; we have to play it! </span></p>
+<p><span style="font-weight: 400;">To do that, we send a command to the telephony provider to play the file we just made. The provider takes our audio file and streams the sound to the caller.</span></p>
+<p><span style="font-weight: 400;">What if it takes a long time for the TTS system to generate the audio, or the telephony provider is slow to play the sound? The conversation becomes laggy and awkward. In fact, latency at any step ruins the fluidity of the conversation. Our systems can’t just <em>work</em>. They need to work in <em>real-time</em>.</span></p>
+<p><b>Ensuring Conversational Fluidity. </b><span style="font-weight: 400;">As we’ve learned, many little things can go wrong when a person talks to a machine. This overview offers just a peek into the infinite nuances of building a Contact Center Automation platform (remember, the above example looks at just a <em>single</em> interaction in a conversation that can have dozens more).</span></p>
+<p><span style="font-weight: 400;">That’s why we build complex systems to monitor the health and quality of the conversations on our platform. We’re always analyzing and improving, ensuring software is making the right decisions, and doing so quickly, so that conversations with Thinking Machines are always more fluid and natural than anything customers have experienced before.</span></p>
+<div id="om-sygm4yjbdvwv7fdbgulz-holder"></div>
+<p>The post <a rel="nofollow" href="https://www.replicant.com/blog/replicant-labs-what-can-go-wrong-in-the-life-of-an-interaction/">Replicant Labs: What Can Go Wrong in the Lifecycle of an Interaction?</a> appeared first on <a rel="nofollow" href="https://www.replicant.com">Replicant</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
